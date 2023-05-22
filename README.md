@@ -1,4 +1,3 @@
  # Gestor
 
-Este programa funciona en consola con el comando: Python run.py -t 
-O con interfaz grafica mediante: Python run.py
+"Python run.py -t" to run in terminal | "Python run.py" to run with ui
