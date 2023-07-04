@@ -1,3 +1,35 @@
- # Gestor
+# Gestor de clientes en Python
 
-"Python run.py -t" to run in terminal | "Python run.py" to run with ui | "pipenv run uvicorn api:app --reload" to run API
+Repositorio del proyecto completo del curso de Python.
+
+## Instalar las dependencias
+
+_Nota: Sólo incluye pytest para realizar pruebas unitarias._
+
+```bash
+pip install -r requirements.txt
+```
+
+## Para probar el programa en modo gráfico
+
+```bash
+python run.py
+```
+
+## Para probar el programa en modo terminal
+
+```bash
+python run.py -t
+```
+
+## Para ejecutar las pruebas unitarias
+
+```bash
+pytest -v
+```
+
+## Para lanzar la api
+
+```bash
+pipenv run uvicorn api:app --reload
+```

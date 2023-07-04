@@ -1,4 +1,3 @@
-# Interfaz (une el run.py con database.py)
 import os
 import helpers
 import database as db
@@ -6,10 +5,8 @@ import database as db
 
 def iniciar():
     while True:
-        # Limpiar
-        helpers.limpiar_pantalla
+        helpers.limpiar_pantalla()
 
-        # Mostramos un menu
         print("========================")
         print("  Bienvenido al Gestor  ")
         print("========================")
@@ -21,8 +18,8 @@ def iniciar():
         print("[6] Cerrar el Gestor    ")
         print("========================")
 
-        opcion = input(">")
-        helpers.limpiar_pantalla
+        opcion = input("> ")
+        helpers.limpiar_pantalla()
 
         if opcion == '1':
             print("Listando los clientes...\n")
@@ -37,17 +34,15 @@ def iniciar():
 
         elif opcion == '3':
             print("Añadiendo un cliente...\n")
-            # Buena practica: iniciar dni como None para asegurar de que el dni exista
+
             dni = None
             while True:
                 dni = helpers.leer_texto(3, 3, "DNI (2 int y 1 char)").upper()
                 if helpers.dni_valido(dni, db.Clientes.lista):
                     break
 
-            nombre = helpers.leer_texto(
-                2, 30, "Nombre (de 2 a 30 chars)").capitalize()
-            apellido = helpers.leer_texto(
-                2, 30, "Apellido (de 2 a 30 chars)").capitalize()
+            nombre = helpers.leer_texto(2, 30, "Nombre (de 2 a 30 chars)").capitalize()
+            apellido = helpers.leer_texto(2, 30, "Apellido (de 2 a 30 chars)").capitalize()
             db.Clientes.crear(dni, nombre, apellido)
             print("Cliente añadido correctamente.")
 
@@ -69,9 +64,10 @@ def iniciar():
             print("Borrando un cliente...\n")
             dni = helpers.leer_texto(3, 3, "DNI (2 int y 1 char)").upper()
             print("Cliente borrado correctamente.") if db.Clientes.borrar(
-                dni) else print("Cliente no encontrado")
+                dni) else print("Cliente no encontrado.")
+
         elif opcion == '6':
             print("Saliendo...\n")
             break
 
-        input('\nPresiona ENTER para continuar...')
+        input("\nPresiona ENTER para continuar...")

@@ -1,6 +1,5 @@
-# Script que pone en marcha el programa
-import sys
 import ui
+import sys
 import menu
 
 if __name__ == "__main__":
